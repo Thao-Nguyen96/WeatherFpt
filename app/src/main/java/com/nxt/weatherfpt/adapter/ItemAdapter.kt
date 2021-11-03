@@ -20,6 +20,8 @@ class ItemAdapter( var listWeather: ArrayList<ListDayWeather>) :
             .inflate(R.layout.item_layout, parent, false))
     }
 
+    //hello
+
     @SuppressLint("SimpleDateFormat")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 

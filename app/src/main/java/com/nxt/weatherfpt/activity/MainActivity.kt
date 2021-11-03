@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -45,7 +46,8 @@ class MainActivity : AppCompatActivity() {
         rv.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
         rv.adapter = adapter
 
-        val viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+       val viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+       // val viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
         viewModel.makeApiCall("saigon", "metric", API_KEY)
         viewModel.makeApiCallDay("saigon", "metric", 18, API_KEY)
